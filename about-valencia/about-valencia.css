@@ -1,24 +1,19 @@
 body {
-    background-image: url(images/clubhouse-tierra-alta-blurred.png);
+    background-image: url(../images/clubhouse-tierra-alta-blurred.png);
     background-repeat: no-repeat;
     background-size: cover;
     backdrop-filter: blur(10px);
 }
 
-/*copy and paste para sa button style*/
-.btn-primary, .btn {
-    background-color: #0038A8 !important;
-    border-color: #0038A8 !important;
-    border-radius: 30px !important;
-    padding: 0.5rem 4rem !important;
+.valencia-summary, .valencia-history, .valencia-geography, .barangay-list {
+    background-color: rgba(243, 243, 243, 0.7);
+    padding: 1rem;
+    margin-bottom: 5rem;
 }
 
-/*copy and paste para sa button style*/
-.btn-primary:hover, .btn-primary:focus {
-    background-color: #002A75 !important;
-    border-color: #002A75 !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-    transform: translateY(-2px) !important;
+/* Enable smooth scrolling for in-page anchor links */
+html {
+    scroll-behavior: smooth;
 }
 
 /*copy and paste para sa seal style*/
@@ -93,11 +88,6 @@ body {
     background-color: #CE1126;
 }
 
-.homepage-section {
-    background-color: rgba(243, 243, 243, 0.7);
-    padding: 2rem;
-}
-
 @media (max-width: 991.98px) {
     .navbar-nav .nav-item {
         margin-bottom: 0.5rem;
@@ -105,20 +95,13 @@ body {
 }
 
 /* Section: ensure heading/paragraph responsive layout */
-.homepage-section h1 {
+.valencia-history h2, .valencia-geography h2 {
     font-size: clamp(1.5rem, 3vw, 2.5rem);
 }
-.homepage-section p {
+
+.valencia-summary p, .valencia-geography p, .valencia-history p {
     font-size: clamp(0.95rem, 1.8vw, 1.1rem);
     line-height: 1.5;
-}
-
-/* Carousel: full-width below the paragraph; responsive image behavior */
-.carousel-item img {
-    width: 100%;
-    height: 50vh;
-    object-fit: cover;
-    object-position: center;
 }
 
 /* Container-level rounding: ensures images and controls are clipped to rounded corners */
@@ -137,7 +120,66 @@ body {
         height: auto;
         object-fit: contain;
     }
-    .valencia-summary, .valencia-history {
+    .valencia-summary, .valencia-history, .valencia-geography {
         padding: 1rem;
     }
+}
+
+/* Barangay list columns (responsive) */
+.barangay-list h3 {
+    text-align: center;
+}
+
+.barangay-columns {
+    column-gap: 2rem;
+    -webkit-column-gap: 2rem;
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    padding-left: 0;
+}
+
+/* Desktop: 3 columns */
+@media (min-width: 992px) {
+    .barangay-columns {
+        column-count: 3;
+    }
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .barangay-columns {
+        column-count: 2;
+    }
+}
+
+/* Mobile: single column */
+@media (max-width: 575.98px) {
+    .barangay-columns {
+        column-count: 1;
+    }
+}
+
+.barangay-columns li {
+    display: block;
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    margin-bottom: 0.5rem;
+    padding-left: 0;
+    list-style-position: inside;
+}
+
+/*copy and paste para sa button style*/
+.btn-primary, .btn {
+    background-color: #0038A8 !important;
+    border-color: #0038A8 !important;
+    border-radius: 30px !important;
+    padding: 0.5rem 4rem !important;
+}
+
+/*copy and paste para sa button style*/
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #002A75 !important;
+    border-color: #002A75 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    transform: translateY(-2px) !important;
 }
