@@ -1,43 +1,47 @@
 body {
-    background-image: url(images/clubhouse-tierra-alta-blurred.png);
+    background-image: url(../images/clubhouse-tierra-alta-blurred.png);
     background-size: cover;
     backdrop-filter: blur(10px);
 }
 
-/*copy and paste para sa button style*/
-.btn-primary, .btn {
-    background-color: #2e2e2e !important;
-    border-color: #2e2e2e !important;
-    border-radius: 30px !important;
-    padding: 0.5rem 4rem !important;
+/* Enable smooth scrolling for in-page anchor links */
+html {
+    scroll-behavior: smooth;
 }
 
-/*copy and paste para sa button style*/
-.btn-primary:hover, .btn-primary:focus {
-    background-color: #002A75 !important;
-    border-color: #002A75 !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-    transform: translateY(-2px) !important;
+.developer-page-content {
+    background-color: rgba(243, 243, 243, 0.7);
+    padding: 1rem;
+    margin-bottom: 5rem;
 }
 
-/*copy and paste para sa seal style*/
-.valencia-seal {
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* logo width-height adjustment*/
+.valencia-seal, .fb-logo, .gmail-logo {
     height: 40px;
     width: auto;
     margin-bottom: 5px;
 }
 
-/*copy and paste para sa seal style*/
-.valencia-seal:hover {
+.ac-logo, .cse-logo {
+    height: 70px;
+    width: auto;
+    margin-bottom: 5px;
+}
+
+/* logo hover effects*/
+.valencia-seal:hover, .fb-logo:hover, .gmail-logo:hover {
     transform: scale(1.1);
     transition: transform 150ms ease;
 }
 
-/* Navbar custom styles: semi-transparent bar and centered, evenly spaced links */
+/* navbar background color */
 .navbar {
     background-color: rgba(255, 255, 255, 0.6);
 }
-
 /* Base link appearance (pill-ready) */
 .navbar-nav .nav-item {
     display: flex;
@@ -57,7 +61,6 @@ body {
     color: #ffffff !important;
     text-decoration: none;
 }
-
 /* Alternating pill hover / active backgrounds
    Start from About Valencia as first item (nth-child(1))
    Odd items: primary #0038A8, Even items: secondary #CE1126 */
@@ -97,56 +100,58 @@ body {
     background-color: #0038A8;
 }
 
-.homepage-section {
-    background-color: rgba(243, 243, 243, 0.7);
-    padding: 2rem;
-}
-
 @media (max-width: 991.98px) {
     .navbar-nav .nav-item {
         margin-bottom: 0.5rem;
     }
 }
 
-/* Section: ensure heading/paragraph responsive layout */
-.homepage-section h1 {
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
-}
-.homepage-section p {
-    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
-    line-height: 1.5;
+.card {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 14px;
 }
 
-/* Carousel: full-width below the paragraph; responsive image behavior */
-.carousel-item img {
+.card-body {
+    padding-bottom: 3rem;
+}
+
+/* Make developer cards equal size and images scale without cropping */
+.mugshots-card .row {
+    align-items: stretch; /* make columns equal height */
+}
+.mugshots-card .row > .col {
+    display: flex;
+}
+.mugshots-card .row > .col .card {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto; /* let cards expand to fill column height */
+    margin: 0; /* remove accidental gaps */
+}
+
+/* Mugshot images: do not crop; maintain full image visible while remaining responsive */
+.card .card-img-top {
     width: 100%;
-    object-fit: cover;
+    height: auto; /* allow natural height */
+    max-height: 240px; /* limit visual size on desktop */
+    object-fit: contain; /* show whole image without cropping */
     object-position: center;
+    display: block;
+    background-color: rgba(255,255,255,0.05); /* subtle background for letterbox areas */
 }
 
-/* Container-level rounding: ensures images and controls are clipped to rounded corners */
-.carousel {
-    width: 75%;
-    margin: 0 auto;
-    border-radius: 20px;
-    overflow: hidden; /* clip overflowing child elements (images, controls) */
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-}
-.carousel .carousel-inner {
-    border-radius: 20px; /* safe-guard for some browsers */
+.card .card-body {
+    flex: 1 1 auto; /* body grows to fill remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-@media (max-width: 768px) {
-    /* On small screens make carousel images scale by width (no crop) */
-    .carousel-item img {
-        height: auto;
-        object-fit: contain;
-    }
-    .homepage-section {
-        padding: 1rem;
-        height: auto;
-    }
+/* Responsive reductions */
+@media (max-width: 991.98px) {
+  .card .card-img-top { max-height: 200px; }
 }
-
-
+@media (max-width: 575.98px) {
+  .card .card-img-top { max-height: 160px; }
+}
 

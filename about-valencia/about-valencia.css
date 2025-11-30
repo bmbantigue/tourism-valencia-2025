@@ -5,7 +5,7 @@ body {
     backdrop-filter: blur(10px);
 }
 
-.valencia-summary, .valencia-history, .valencia-geography, .barangay-list {
+.about-valencia-content {
     background-color: rgba(243, 243, 243, 0.7);
     padding: 1rem;
     margin-bottom: 5rem;
@@ -87,6 +87,11 @@ html {
 .navbar-nav .nav-item:nth-child(7) .nav-link.active {
     background-color: #CE1126;
 }
+.navbar-nav .nav-item:nth-child(8) .nav-link:hover,
+.navbar-nav .nav-item:nth-child(8) .nav-link:focus,
+.navbar-nav .nav-item:nth-child(8) .nav-link.active {
+    background-color: #0038A8;
+}
 
 @media (max-width: 991.98px) {
     .navbar-nav .nav-item {
@@ -95,11 +100,11 @@ html {
 }
 
 /* Section: ensure heading/paragraph responsive layout */
-.valencia-history h2, .valencia-geography h2 {
+.about-valencia-content h2 {
     font-size: clamp(1.5rem, 3vw, 2.5rem);
 }
 
-.valencia-summary p, .valencia-geography p, .valencia-history p {
+.about-valencia-content p {
     font-size: clamp(0.95rem, 1.8vw, 1.1rem);
     line-height: 1.5;
 }

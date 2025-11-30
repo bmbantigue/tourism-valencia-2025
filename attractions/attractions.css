@@ -27,7 +27,7 @@ html {
 }
 
 /* article or section background for readability */
-.attractions-summary {
+.valencia-attractions {
     background-color: rgba(243, 243, 243, 0.7);
     padding: 1rem;
     margin-bottom: 5rem;
@@ -103,6 +103,11 @@ html {
 .navbar-nav .nav-item:nth-child(7) .nav-link.active {
     background-color: #CE1126;
 }
+.navbar-nav .nav-item:nth-child(8) .nav-link:hover,
+.navbar-nav .nav-item:nth-child(8) .nav-link:focus,
+.navbar-nav .nav-item:nth-child(8) .nav-link.active {
+    background-color: #0038A8;
+}
 
 @media (max-width: 991.98px) {
     .navbar-nav .nav-item {
@@ -111,19 +116,67 @@ html {
 }
 
 /* section and article h2-h6 for responsive layout */
-.valencia-history h2, .card-body h5 {
+.valencia-attractions h2, h5{
     font-size: clamp(1.5rem, 3vw, 2.5rem);
 }
 /* section and article paragraph for responsive layout */
-.attractions-summary p, .card-body p {
+.valencia-attractions p {
     font-size: clamp(0.95rem, 1.8vw, 1.1rem);
     line-height: 1.5;
 }
 
 .card {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
 }
 
 .card-body {
     padding-bottom: 3rem;
+}
+
+@media (max-width: 768px) {
+    /* On small screens make carousel images scale by width (no crop) */
+    .carousel-item img {
+        height: auto;
+        object-fit: contain;
+    }
+    .valencia-attractions   {
+        padding: 1rem;
+        height: auto;
+    }
+}
+
+.card .carousel {
+    /* make carousel a fixed, responsive box inside each card
+       - aspect-ratio keeps proportions regardless of image dimensions
+       - max-width caps the horizontal size on large screens
+       - max-height prevents the carousel from forcing page height
+    */
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    aspect-ratio: 16/9;
+    height: auto !important;
+    max-height: 60vh;
+    border-radius: 14px;
+    overflow: hidden; /* clip overflowing child elements (images, controls) */
+}
+
+.card .carousel .carousel-item img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Responsive breaks: adjust max-width/aspect for tablet and mobile */
+@media (max-width: 991.98px) {
+    .card .carousel { max-width: 700px; aspect-ratio: 4/3; max-height: 50vh; }
+}
+@media (max-width: 767.98px) {
+    .card .carousel { max-width: 100%; aspect-ratio: 4/3; max-height: 45vh; }
+    .card .carousel .carousel-item img { object-fit: cover; }
+}
+@media (max-width: 575.98px) {
+    .card .carousel { aspect-ratio: 3/2; max-height: 36vh; }
 }
