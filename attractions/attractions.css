@@ -5,12 +5,10 @@ body {
     backdrop-filter: blur(10px);
 }
 
-/* Enable smooth scrolling for in-page anchor links */
 html {
     scroll-behavior: smooth;
 }
 
-/*button style adjustments*/
 .btn-primary, .btn {
     background-color: #CE1126 !important;
     border-color: #CE1126 !important;
@@ -18,7 +16,6 @@ html {
     padding: 0.5rem 4rem !important;
 }
 
-/*button hover adjustments*/
 .btn-primary:hover, .btn-primary:focus {
     background-color: #9B1B1B !important;
     border-color: #9B1B1B !important;
@@ -26,32 +23,27 @@ html {
     transform: translateY(-2px) !important;
 }
 
-/* article or section background for readability */
 .valencia-attractions {
     background-color: rgba(243, 243, 243, 0.7);
     padding: 1rem;
     margin-bottom: 5rem;
 }
 
-/* seal width-height adjustment*/
 .valencia-seal {
     height: 40px;
     width: auto;
     margin-bottom: 5px;
 }
 
-/* seal hover effects*/
 .valencia-seal:hover {
     transform: scale(1.1);
     transition: transform 150ms ease;
 }
 
-
-/* navbar background color */
 .navbar {
     background-color: rgba(255, 255, 255, 0.6);
 }
-/* Base link appearance (pill-ready) */
+
 .navbar-nav .nav-item {
     display: flex;
     align-items: center;
@@ -70,9 +62,7 @@ html {
     color: #ffffff !important;
     text-decoration: none;
 }
-/* Alternating pill hover / active backgrounds
-   Start from About Valencia as first item (nth-child(1))
-   Odd items: primary #0038A8, Even items: secondary #CE1126 */
+
 .navbar-nav .nav-item:nth-child(2) .nav-link:hover,
 .navbar-nav .nav-item:nth-child(2) .nav-link:focus,
 .navbar-nav .nav-item:nth-child(2) .nav-link.active {
@@ -115,11 +105,9 @@ html {
     }
 }
 
-/* section and article h2-h6 for responsive layout */
 .valencia-attractions h2, h5{
     font-size: clamp(1.5rem, 3vw, 2.5rem);
 }
-/* section and article paragraph for responsive layout */
 .valencia-attractions p {
     font-size: clamp(0.95rem, 1.8vw, 1.1rem);
     line-height: 1.5;
@@ -135,7 +123,6 @@ html {
 }
 
 @media (max-width: 768px) {
-    /* On small screens make carousel images scale by width (no crop) */
     .carousel-item img {
         height: auto;
         object-fit: contain;
@@ -147,11 +134,6 @@ html {
 }
 
 .card .carousel {
-    /* make carousel a fixed, responsive box inside each card
-       - aspect-ratio keeps proportions regardless of image dimensions
-       - max-width caps the horizontal size on large screens
-       - max-height prevents the carousel from forcing page height
-    */
     width: 100%;
     max-width: 760px;
     margin: 0 auto;
@@ -159,7 +141,7 @@ html {
     height: auto !important;
     max-height: 60vh;
     border-radius: 14px;
-    overflow: hidden; /* clip overflowing child elements (images, controls) */
+    overflow: hidden;
 }
 
 .card .carousel .carousel-item img {
@@ -169,7 +151,6 @@ html {
     display: block;
 }
 
-/* Responsive breaks: adjust max-width/aspect for tablet and mobile */
 @media (max-width: 991.98px) {
     .card .carousel { max-width: 700px; aspect-ratio: 4/3; max-height: 50vh; }
 }
