@@ -5,12 +5,10 @@ body {
     backdrop-filter: blur(10px);
 }
 
-/* Enable smooth scrolling for in-page anchor links */
 html {
     scroll-behavior: smooth;
 }
 
-/*button style adjustments*/
 .btn-primary, .btn {
     background-color: #CE1126 !important;
     border-color: #CE1126 !important;
@@ -18,7 +16,6 @@ html {
     padding: 0.5rem 4rem !important;
 }
 
-/*button hover adjustments*/
 .btn-primary:hover, .btn-primary:focus {
     background-color: #9B1B1B !important;
     border-color: #9B1B1B !important;
@@ -26,32 +23,27 @@ html {
     transform: translateY(-2px) !important;
 }
 
-/* article or section background for readability */
 .festivals {
     background-color: rgba(243, 243, 243, 0.7);
     padding: 1rem;
     margin-bottom: 5rem;
 }
 
-/* seal width-height adjustment*/
 .valencia-seal {
     height: 40px;
     width: auto;
     margin-bottom: 5px;
 }
 
-/* seal hover effects*/
 .valencia-seal:hover {
     transform: scale(1.1);
     transition: transform 150ms ease;
 }
 
-
-/* navbar background color */
 .navbar {
     background-color: rgba(255, 255, 255, 0.6);
 }
-/* Base link appearance (pill-ready) */
+
 .navbar-nav .nav-item {
     display: flex;
     align-items: center;
@@ -70,9 +62,7 @@ html {
     color: #ffffff !important;
     text-decoration: none;
 }
-/* Alternating pill hover / active backgrounds
-   Start from About Valencia as first item (nth-child(1))
-   Odd items: primary #0038A8, Even items: secondary #CE1126 */
+
 .navbar-nav .nav-item:nth-child(2) .nav-link:hover,
 .navbar-nav .nav-item:nth-child(2) .nav-link:focus,
 .navbar-nav .nav-item:nth-child(2) .nav-link.active {
@@ -115,17 +105,15 @@ html {
     }
 }
 
-/* Carousel: full-width below the paragraph; responsive image behavior */
 .carousel-item img {
     width: 100%;
     object-fit: cover;
     object-position: center;
 }
 
-/* Container-level rounding: ensures images and controls are clipped to rounded corners */
 .carousel {
     border-radius: 20px;
-    overflow: hidden; /* clip overflowing child elements (images, controls) */
+    overflow: hidden; 
     box-shadow: 0 8px 24px rgba(0,0,0,0.12);
     margin: 0 auto;
     width: 80%;
@@ -133,11 +121,10 @@ html {
     max-height: 500px;
 }
 .carousel .carousel-inner {
-    border-radius: 20px; /* safe-guard for some browsers */
+    border-radius: 20px; 
 }
 
 @media (max-width: 768px) {
-    /* On small screens make carousel images scale by width (no crop) */
     .carousel-item img {
         height: auto;
         object-fit: contain;
@@ -148,11 +135,10 @@ html {
     }
 }
 
-/* section and article h2-h6 for responsive layout */
 .rambones-festival h2, .puhag-festival h2 {
     font-size: clamp(1.5rem, 3vw, 2.5rem);
 }
-/* section and article paragraph for responsive layout */
+
 .rambones-festival p, .puhag-festival p {
     font-size: clamp(0.95rem, 1.8vw, 1.1rem);
     line-height: 1.5;
