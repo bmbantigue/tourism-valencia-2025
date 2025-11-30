@@ -5,12 +5,10 @@ body {
     backdrop-filter: blur(10px);
 }
 
-/* Enable smooth scrolling for in-page anchor links */
 html {
     scroll-behavior: smooth;
 }
 
-/*button style adjustments*/
 .btn-primary,
 .btn {
     background-color: #CE1126 !important;
@@ -19,7 +17,6 @@ html {
     padding: 0.5rem 4rem !important;
 }
 
-/*button hover adjustments*/
 .btn-primary:hover,
 .btn-primary:focus {
     background-color: #9B1B1B !important;
@@ -28,33 +25,27 @@ html {
     transform: translateY(-2px) !important;
 }
 
-/* article or section background for readability */
 .valencia-attractions {
     background-color: rgba(243, 243, 243, 0.7);
     padding: 1rem;
     margin-bottom: 5rem;
 }
 
-/* seal width-height adjustment*/
 .valencia-seal {
     height: 40px;
     width: auto;
     margin-bottom: 5px;
 }
 
-/* seal hover effects*/
 .valencia-seal:hover {
     transform: scale(1.1);
     transition: transform 150ms ease;
 }
 
-
-/* navbar background color */
 .navbar {
     background-color: rgba(255, 255, 255, 0.6);
 }
 
-/* Base link appearance (pill-ready) */
 .navbar-nav .nav-item {
     display: flex;
     align-items: center;
@@ -76,9 +67,6 @@ html {
     text-decoration: none;
 }
 
-/* Alternating pill hover / active backgrounds
-   Start from About Valencia as first item (nth-child(1))
-   Odd items: primary #0038A8, Even items: secondary #CE1126 */
 .navbar-nav .nav-item:nth-child(2) .nav-link:hover,
 .navbar-nav .nav-item:nth-child(2) .nav-link:focus,
 .navbar-nav .nav-item:nth-child(2) .nav-link.active {
@@ -133,7 +121,6 @@ html {
     margin-bottom: 5rem;
 }
 
-/* Barangay list columns (responsive) */
 .contact-list h3 {
     text-align: center;
 }
@@ -146,21 +133,18 @@ html {
     padding-left: 0;
 }
 
-/* Desktop: 3 columns */
 @media (min-width: 992px) {
     .barangay-columns {
         column-count: 3;
     }
 }
 
-/* Tablet: 2 columns */
 @media (min-width: 576px) and (max-width: 991.98px) {
     .barangay-columns {
         column-count: 2;
     }
 }
 
-/* Mobile: single column */
 @media (max-width: 575.98px) {
     .barangay-columns {
         column-count: 1;
